@@ -29,6 +29,12 @@ Learned WebV8ew i.e. showing the website under your application
 ### for back button
 
 ```kotlin
+//in onCreate add this line 
+override fun onCreate(savedInstanceState: Bundle?) {
+  //.........................
+  //...........................
+    onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+}
 private val onBackPressedCallback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
             val webView = findViewById<WebView>(R.id.wView)
